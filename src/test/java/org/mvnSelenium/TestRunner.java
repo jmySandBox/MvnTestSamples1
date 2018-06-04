@@ -55,21 +55,26 @@ public class TestRunner {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\Drivers\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		System.out.println("Launch Browser");
+
 		driver.get("https://www.amazon.com/");
+		System.out.println("Accessing Website");
 
 		// Select ddlSelect = new
 		Select ddlSelect = new Select(driver.findElement(By.xpath("//*[@id=\"searchDropdownBox\"]")));
 
 		// Get Count of all values in ddl
 		int optionTot = ddlSelect.getOptions().size();
+		System.out.println("Total Options Available = " + optionTot);
 
 		// create list for all options available
 		List<WebElement> ddlList = ddlSelect.getOptions();
+		System.out.println("Save List of Values to WebElement List");
 
 		// Print all the values
-		for (int i = 0; i < optionTot; i++) {
-			System.out.println(ddlList.get(i).getText());
-		}
+		// for (int i = 0; i < optionTot; i++) {
+		// System.out.println(ddlList.get(i).getText());
+		// }
 
 		// Select Random Value
 		Random rand = new Random();
